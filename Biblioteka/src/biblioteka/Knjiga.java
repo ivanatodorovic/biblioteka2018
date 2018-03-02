@@ -1,4 +1,7 @@
 package biblioteka;
+
+import java.util.Arrays;
+
 public class Knjiga {
 
 	private String naslov, isbn, izdavac;
@@ -38,6 +41,31 @@ public class Knjiga {
 	}
 	public void setIzdanje(int izdanje) {
 		this.izdanje = izdanje;
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Arrays.hashCode(autori);
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Knjiga other = (Knjiga) obj;
+		if (!Arrays.equals(autori, other.autori))
+			return false;
+		return true;
+	}
+	@Override
+	public String toString() {
+		return "Knjiga [naslov=" + naslov + ", isbn=" + isbn + ", izdavac=" + izdavac + ", izdanje=" + izdanje
+				+ ", autori=" + Arrays.toString(autori) + "]";
 	}
 	
 	
