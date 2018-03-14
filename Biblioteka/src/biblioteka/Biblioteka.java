@@ -40,7 +40,7 @@ public class Biblioteka implements BibliotekaInterfejs{
 				novaLista.add(knjige.get(i));
 		}
 		
-		
+	//Ovo je ok komentar	
 		return novaLista;
 	}
 
